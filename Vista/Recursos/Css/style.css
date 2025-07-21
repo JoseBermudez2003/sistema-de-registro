@@ -1,0 +1,149 @@
+/* Reset básico para todos los elementos */
+/* Elimina márgenes y rellenos por defecto y usa box-sizing border-box para facilitar el cálculo de tamaños */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilos generales para el cuerpo y contenedores */
+/* Contenedor general para formularios */
+.form-container {
+  max-width: 500px;                 /* Ancho máximo */
+  margin: 50px auto;                /* Centrado horizontal con margen superior */
+  padding: 30px;                    /* Espaciado interno */
+  border-radius: 8px;               /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo general del body */
+body {
+  font-family: Arial, sans-serif;  /* Fuente legible y estándar */
+  line-height: 1.6;                /* Espaciado de líneas cómodo para lectura */
+  min-height: 100vh;               /* Alto mínimo igual a la altura de la ventana */
+}
+
+
+/* Estilos para botones generales */
+.btn {
+  transition: all 0.3s ease;       /* Transición suave para efectos */
+  border-radius: 5px;              /* Bordes redondeados */
+  padding: 8px 15px;               /* Relleno interno */
+  cursor: pointer;                 /* Cambia el cursor al pasar sobre el botón */
+}
+
+
+/* Efecto hover: crecimiento leve (menu) */
+.btn:hover {
+  transform: scale(1.05);
+}
+
+
+/* Estilos para gráficos */
+/* Limita el ancho máximo del canvas para que no se desborde (graficas del index)*/
+canvas {
+  max-width: 100%;
+}
+
+
+
+
+/*-----ESTILOS PARA LA VISTA DE LISTACASOS.PHP-------------*/
+
+/* Estilos para select con clase form-select-edit */
+/*esta clase para tanto para el input de motivo como el de atendido*/
+select.form-select-edit {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* Icono SVG para la flecha desplegable (color blanco) */
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0id2hpdGUiPjxwYXRoIGQ9Ik03IDEwbDUgNSA1LTV6Ii8+PC9zdmc+");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 1.5rem;
+  padding-right: 2.1rem;           /* Espacio para la flecha */
+  background-color: #000;          /* Fondo negro */
+  color: #fff;                     /* Texto blanco */
+  border: 2px solid #444;          /* Borde gris oscuro */
+}
+
+
+/* Estilo para las opciones del select personalizado */
+select.form-select-edit option {
+  background-color: #000;          /* Fondo negro */
+  color: #fff;                    /* Texto blanco */
+}
+
+
+/* Estilo para el input de fecha dentro de .fecha-edit */
+.fecha-edit input[type="date"] {
+  background-color: black;
+  color: white;
+  border: 1px solid #ccc;
+  padding: 4px;
+  text-align: center;
+}
+
+/* Evitar que cambie a blanco al hacer foco */
+.fecha-edit input[type="date"]:focus {
+  background-color: black;
+  color: white;
+  outline: none;
+}
+
+/* Forzar el color del icono del calendario en navegadores WebKit (Chrome, Edge, Safari...) */
+.fecha-edit input[type="date"]::-webkit-calendar-picker-indicator {
+  filter: invert(1); /* invierte el color para que el icono se vea blanco sobre fondo negro */
+  cursor: pointer;
+}
+
+/* Para Firefox (aunque el icono de calendario no se puede personalizar mucho ahí) */
+.fecha-edit input[type="date"]::-moz-focus-inner {
+  border: 0;
+}
+/*---------FIN DE LOS ESTILOS DE LA VISTA DE LISTACASOS.PHP-----------*/
+
+
+
+
+/* Botón extra pequeño (.btn-xs) esto es de datatables buttons(TODAS LAS VISTAS QUE TENGAN DATATABLES) */
+.btn-xs {
+  padding: 2px 6px;                /* Relleno pequeño */
+  font-size: 0.75rem;              /* Tamaño de fuente pequeño */
+  line-height: 1.2;                /* Línea más compacta */
+}
+
+
+
+/* Contenedor botones para que estén alineados en una sola fila y no se desborden */
+td .d-flex.justify-content-center.flex-wrap.gap-2 {
+  flex-wrap: nowrap !important; /* no permite que los botones hagan wrap */
+  max-width: 180px;             /* ancho máximo para que no se desborden mucho */
+  justify-content: center !important;
+}
+
+/* Opcional: ajustar tamaño de botones para que entren mejor */
+td .d-flex.justify-content-center.flex-wrap.gap-2 .btn {
+  flex: 0 0 auto;    /* evita que los botones se estiren */
+  padding: 4px 6px;  /* reduce padding para que sean más compactos */
+  min-width: 36px;   /* ancho mínimo para los botones */
+  height: 34px;      /* altura fija */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Ajustar tamaño de imagen dentro de botones para que encaje */
+td .d-flex.justify-content-center.flex-wrap.gap-2 .btn img {
+  width: 18px;
+  height: 18px;
+}
+
+
+/* Botón seleccionado del filtro tipo */
+#filtroTipoContainer .tipo-btn.active {
+  background-color: #0d6efd;
+  color: white;
+  font-weight: bold;
+  border-color: #0d6efd;
+}

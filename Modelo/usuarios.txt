@@ -1,0 +1,4 @@
+usuario: jose bermudez
+cedula: 28693229
+contraseña: Sucre123. (s mayuscula)
+pin: 1234
